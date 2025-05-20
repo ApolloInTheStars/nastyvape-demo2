@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nasty Vapes </title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<style>
+    .logo-container { text-align: center; padding: 20px 0; }
+    .logo-img { max-width: 300px; height: auto; }
+</style>
+<body>
+    <!-- Age Verification Modal -->
+    <div id="ageVerificationModal" class="modal">
+        <div class="modal-content">
+            <h2>Age Verification</h2>
+            <p>Are you 21 years of age or older?</p>
+            <div class="modal-buttons">
+                <button id="confirmAge" class="btn-primary">Yes, I'm 21+</button>
+                <button id="denyAge" class="btn-secondary">No, I'm under 21</button>
+            </div>
+            <p class="disclaimer">By entering this site you agree to being over the age of 21 years old and agree to our Terms of Service and Privacy Policy</p>
+        </div>
+    </div>
+
+
+
+<header class="header">
+    <div class="container">
+        <div class="logo">
+            <a href="#" class="logo-link">  <!-- Added logo-link class -->
+                <i class="fas fa-cloud cloud-icon"></i>  <!-- Added cloud-icon class -->
+            </a>
+        </div>
+        <nav class="main-nav">
+            <ul>
+                
+       
+                
+               
+              
+            </ul>
+        </nav>
+        <div class="header-icons">
+            <a href="collection.html" class="product-icon"><i class="fas fa-box"></i></a>  <!-- Updated to collection.html -->
+            <a href="#account" class="account-icon"><i class="fas fa-user"></i></a>
+            <a href="#cart" class="cart-icon"><i class="fas fa-shopping-cart"></i><span class="cart-count">0</span></a>
+        </div>
+        <button class="mobile-menu-btn"><i class="fas fa-bars"></i></button>
+    </div>
+</header>
+    
+<!-- Hero Section -->
+<section class="hero" style="background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/cloud.png') no-repeat center center/cover;">
+    <div class="hero-content">
+        <h1>Welcome to Smoking Cloud</h1>
+      <div class="btn-group">
+    <a href="collection.html" class="btn-primary">Shop Now</a>  <!-- Changed from #featured to collection.html -->
+    <a href="contact.html" class="btn-primary">Contact Us</a>
+</div>
+        <a class="logo">
+            <i class="fas fa-cloud"></i> 
+        </a>
+        <p>Find your Taste!</p>
+    </div>
+</section>
+
+    <!-- Featured Products -->
+    <section id="featured" class="featured-products">
+        <div class="container">
+            <h2 class="section-title">Featured Products</h2>
+            <div class="product-grid">
+                <!-- Product 1 -->
+                <div class="product-card">
+                    <div class="product-badge">TRY NEW </div>
+                    <img src="images/Arctic White.jpeg" alt="Arctic White Vape">
+                    <h3>Arctic White</h3>
+                    
+               
+                 
+                    <div class="product-price">
+                        <span class="current-price">R200</span>
+                        <span class="original-price">R250</span>
+                    </div>
+                    <button class="btn-primary add-to-cart">Add to Cart</button>
+                    
+                </div>
+                
+                <!-- Product 2 -->
+                <div class="product-card">
+                    <img src="images/Cherry Peach Lemon.png" alt="Arctic White Vape">
+                    <h3>Cherry Peach Lemon</h3>
+                    
+                   
+                    <div class="product-price">
+                        <span class="current-price">R200</span>
+                        <span class="original-price">R250</span>
+                    </div>
+                    <button class="btn-primary add-to-cart">Add to Cart</button>
+                   
+                </div>
+                
+                
+                <!-- Product 3 -->
+                <div class="product-card">
+                    <div class="product-badge">Sale</div>
+                    <img src="images/Blue Razz Ice.jpeg" alt="Arctic White Vape">
+                    <h3>Blue Razz Ice</h3>
+                    
+                 
+                    <div class="product-price">
+                        <span class="current-price">R200</span>
+                        <span class="original-price">R250</span>
+                    </div>
+                    <button class="btn-primary add-to-cart">Add to Cart</button>
+                   
+                </div>
+                
+                
+                <!-- Product 4 -->
+                <div class="product-card">
+                    <div class="product-badge">BESTSELLER</div>
+                    <img src="images/Passionfruit.png" alt="Arctic White Vape">
+                    <h3>Passionfruit</h3>
+                    
+                   
+                    <div class="product-price">
+                        <span class="current-price">R200</span>
+                        <span class="original-price">R250</span>
+                    </div>
+                    <button class="btn-primary add-to-cart">Add to Cart</button>
+                    
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section id="categories" class="categories">
+        <div class="container">
+            <h2 class="section-title">Shop by Category</h2>
+  <!-- In the Categories Section -->
+<div class="category-card">
+    <img src="images/Peach Ice.png" alt="9000 Puffs">
+    <div class="category-overlay">
+        <h3>9 000 puffs</h3>
+        <a href="collection.html?puffs=9000" class="btn-secondary">Shop Now</a>  <!-- Added query parameter -->
+    </div>
+</div>
+<div class="category-card">
+    <img src="images/Cotton Candy.jpeg" alt="14000 Puffs">
+    <div class="category-overlay">
+        <h3>14 000 puffs</h3>
+        <a href="collection.html?puffs=14000" class="btn-secondary">Shop Now</a>  <!-- Added query parameter -->
+    </div>
+</div>
+                
+                
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+                </div>
+            </div>
+        </div>
+    </section>
+
+   
+
+   <!-- Newsletter Section -->
+<section class="newsletter">
+    <div class="container">
+        <div class="newsletter-content">
+            <h2>Join Our Private Club</h2>
+            <p>Drop your email, Join our Club for exclusives</p>
+            <form id="newsletterForm" class="newsletter-form">
+                <input type="email" id="newsletterEmail" placeholder="Your email address" required>
+                <button type="submit" class="btn-primary">Subscribe</button>
+            </form>
+            <div id="newsletterMessage" class="newsletter-message"></div>
+            <p class="privacy-text">We respect your privacy. Unsubscribe at any time.</p>
+        </div>
+    </div>
+</section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                </div>
+                <div class="footer-col">
+                    <h3>Help</h3>
+                    <ul>
+                        
+                        <li><a href="#">Shipping Policy</a></li>
+                        <li><a href="#">Returns & Exchanges</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>About</h3>
+                    <ul>
+                        
+                        <li><a href="#">Wholesale</a></li>
+                    
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Connect</h3>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/profile.php?id=61576319001242" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/nastyvapes_/" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.tiktok.com/@nastyvape_?lang=en-GB" target="_blank" rel="noopener noreferrer"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                    <h3>Payment Methods</h3>
+                    <div class="payment-methods">
+                        <i class="fab fa-cc-visa"></i>
+                       
+                        <i class="fab fa-cc-paypal"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Smoking Cloud. All Rights Reserved.</p>
+                <div class="legal-links">
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Privacy Policy</a>
+                   
+                </div>
+            </div>
+        </div>
+    </footer>
+
+              
+                    <div class="product-meta">
+                        <div class="meta-item">
+                            <i class="fas fa-truck"></i>
+                            <span>Free shipping on orders over R1000</span>
+                        </div>
+                        <div class="meta-item">
+                            <i class="fas fa-undo"></i>
+                            <span>30-day return policy</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content auth-modal">
+            <span class="close-modal">&times;</span>
+            <h2>Login</h2>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="loginEmail">Email</label>
+                    <input type="email" id="loginEmail" required>
+                </div>
+                <div class="form-group">
+                    <label for="loginPassword">Password</label>
+                    <input type="password" id="loginPassword" required>
+                </div>
+                <button type="submit" class="btn-primary">Login</button>
+                <div class="auth-links">
+                    <a href="#" id="showRegister">Create an account</a>
+                    <a href="#">Forgot password?</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Register Modal -->
+    <div id="registerModal" class="modal">
+        <div class="modal-content auth-modal">
+            <span class="close-modal">&times;</span>
+            <h2>Register</h2>
+            <form id="registerForm">
+                <div class="form-group">
+                    <label for="registerName">Full Name</label>
+                    <input type="text" id="registerName" required>
+                </div>
+                <div class="form-group">
+                    <label for="registerEmail">Email</label>
+                    <input type="email" id="registerEmail" required>
+                </div>
+                <div class="form-group">
+                    <label for="registerPassword">Password</label>
+                    <input type="password" id="registerPassword" required>
+                </div>
+                <div class="form-group">
+                    <label for="registerConfirmPassword">Confirm Password</label>
+                    <input type="password" id="registerConfirmPassword" required>
+                </div>
+                <div class="form-group checkbox-group">
+                    <input type="checkbox" id="registerAgeVerify" required>
+                    <label for="registerAgeVerify">I confirm that I am 21 years of age or older</label>
+                </div>
+                <div class="form-group checkbox-group">
+                    <input type="checkbox" id="registerSubscribe">
+                    <label for="registerSubscribe">Subscribe to our newsletter</label>
+                </div>
+                <button type="submit" class="btn-primary">Register</button>
+                <div class="auth-links">
+                    <a href="#" id="showLogin">Already have an account? Login</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+
+<!-- Cart Modal -->
+<div id="cartModal" class="modal">
+    <div class="modal-content cart-modal">
+        <span class="close-modal">&times;</span>
+        <h2>Your Cart</h2>
+        <div class="cart-items" id="cartItems">
+            <!-- Cart items will be added here dynamically -->
+        </div>
+        <div class="cart-summary">
+            <div class="cart-total">
+                <span>Subtotal:</span>
+                <span id="cartSubtotal">R0.00</span>
+            </div>
+            <div class="cart-total">
+                <span>Shipping:</span>
+                <span id="cartShipping">R50.00</span>
+            </div>
+            <div class="cart-total grand-total">
+                <span>Total:</span>
+                <span id="cartTotal">R50.00</span>
+            </div>
+            
+            <!-- Checkout Form (initially hidden) -->
+            <div id="checkoutFormContainer" style="display: none;">
+                <h3>Complete Your Order</h3>
+                <form id="checkoutForm">
+                    <div class="form-group">
+                        <label for="customerName">Full Name</label>
+                        <input type="text" id="customerName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="customerEmail">Email</label>
+                        <input type="email" id="customerEmail" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="customerPhone">Phone Number</label>
+                        <input type="tel" id="customerPhone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="deliveryAddress">Delivery Address</label>
+                        <textarea id="deliveryAddress" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="paymentProof">Payment Proof (Screenshot/Reference)</label>
+                        <input type="file" id="paymentProof" accept="image/*,.pdf">
+                    </div>
+                    
+                    <div class="bank-details">
+                        <h4>Banking Details</h4>
+                        <p><strong>Bank Name:</strong> Your Bank Name</p>
+                        <p><strong>Account Name:</strong> Nasty Vapes</p>
+                        <p><strong>Account Number:</strong> 1234567890</p>
+                        <p><strong>Branch Code:</strong> 123456</p>
+                        <p><strong>Reference:</strong> Your Name + Order #</p>
+                    </div>
+                    
+                    <button type="submit" class="btn-primary" id="placeOrderBtn">Place Order</button>
+                </form>
+            </div>
+            
+            <button class="btn-primary" id="checkoutBtn">Proceed to Checkout</button>
+            <p class="continue-shopping">or <a href="#" id="continueShopping">Continue Shopping</a></p>
+        </div>
+    </div>
+</div>
+
+<!-- Checkout Modal -->
+<div id="checkoutModal" class="modal">
+    <div class="modal-content checkout-modal">
+        <span class="close-modal">&times;</span>
+        <h2>Checkout</h2>
+        <form id="checkoutForm">
+            <div class="form-group">
+                <label for="checkoutName">Full Name</label>
+                <input type="text" id="checkoutName" required>
+            </div>
+            <div class="form-group">
+                <label for="checkoutEmail">Email</label>
+                <input type="email" id="checkoutEmail" required>
+            </div>
+            <div class="form-group">
+                <label for="checkoutPhone">Phone Number</label>
+                <input type="tel" id="checkoutPhone" required>
+            </div>
+            <div class="form-group">
+                <label for="checkoutAddress">Shipping Address</label>
+                <textarea id="checkoutAddress" rows="3" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="checkoutPayment">Payment Method</label>
+                <select id="checkoutPayment" required>
+                    <option value="">Select Payment</option>
+                    <option value="credit">Credit Card</option>
+                    <option value="eft">EFT/Bank Transfer</option>
+                    <option value="cash">Cash on Delivery</option>
+                </select>
+            </div>
+            <div id="creditCardFields" style="display: none;">
+                <div class="form-group">
+                    <label for="cardNumber">Card Number</label>
+                    <input type="text" id="cardNumber" placeholder="1234 5678 9012 3456">
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="cardExpiry">Expiry Date</label>
+                        <input type="text" id="cardExpiry" placeholder="MM/YY">
+                    </div>
+                    <div class="form-group">
+                        <label for="cardCvv">CVV</label>
+                        <input type="text" id="cardCvv" placeholder="123">
+                    </div>
+                </div>
+            </div>
+            <button type="submit" class="btn-primary">Complete Order</button>
+        </form>
+    </div>
+    <div class="category-card">
+        <img src="images/Peach Ice.png" alt="9000 Puffs">
+        <div class="category-overlay">
+            <h3>9 000 puffs</h3>
+            <a href="9000-puffs.html" class="btn-secondary">Shop Now</a>
+        </div>
+    </div>
+    <div class="category-card">
+        <img src="images/Cotton Candy.jpeg" alt="14000 Puffs">
+        <div class="category-overlay">
+            <h3>14 000 puffs</h3>
+            <a href="14000-puffs.html" class="btn-secondary">Shop Now</a>
+        </div>
+    </div>
+</div>
+
+
+</body>
+
+</html>

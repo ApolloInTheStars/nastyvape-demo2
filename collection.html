@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Collection - Smoking Cloud</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --secondary: #3498db;
+            --dark: #2c3e50;
+            --light: #f5f5f5;
+            --white: #ffffff;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        body {
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+
+        
+        
+        /* Header Styles */
+        
+        header {
+            background-color: var(--primary);
+            color: var(--white);
+            padding: 1rem 2rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--white);
+            text-decoration: none;
+        }
+        
+        .header-icons {
+            display: flex;
+            gap: 1.5rem;
+        }
+        
+        .header-icons a {
+            color: var(--white);
+            font-size: 1.2rem;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        
+        .header-icons a:hover {
+            color: var(--secondary);
+            transform: translateY(-2px);
+        }
+        
+        .cart-count {
+            position: absolute;
+            top: -8px;
+            right: -12px;
+            background-color: var(--secondary);
+            color: white;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.7rem;
+            font-weight: bold;
+        }
+        
+        /* Collection Page Styles */
+        .collection-container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+        }
+        
+        .category-selector {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .category-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+        
+        .category-btn {
+            padding: 0.8rem 2rem;
+            border: none;
+            border-radius: 30px;
+            background-color: var(--secondary);
+            color: rgb(255, 255, 255);
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .category-btn:hover {
+            background-color: #044b85;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .category-btn.active {
+            background-color: var(--primary);
+        }
+        
+        .collection-title {
+            text-align: center;
+            margin-bottom: 2rem;
+            color: var(--primary);
+        }
+        
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        
+        .product-card {
+            background-color: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+        
+        .product-image {
+            height: 200px;
+            background-color: #eee;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .product-image img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+        
+        .product-info {
+            padding: 1.5rem;
+        }
+        
+        .product-name {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary);
+        }
+        
+        .product-puffs {
+            color: var(--secondary);
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+        
+        .product-price {
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .add-to-cart {
+            width: 100%;
+            padding: 0.6rem;
+            background-color: var(--secondary);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .add-to-cart:hover {
+            background-color: #044b85;
+        }
+        
+        .added-to-cart {
+            background-color: #27ae60;
+        }
+        
+        /* Initially hidden category */
+        .category-section {
+            display: none;
+        }
+        
+        .category-section.active {
+            display: block;
+        }
+        
+        /* Cart notification */
+        .cart-notification {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #27ae60;
+            color: white;
+            padding: 1rem;
+            border-radius: 5px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+            transform: translateY(100px);
+            opacity: 0;
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+        
+        .cart-notification.show {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <a href="index.html" class="logo">Smoking Cloud</a>
+            <div class="header-icons">
+                <a href="#product" class="product-icon"><i class="fas fa-box"></i></a>
+                <a href="#account" class="account-icon"><i class="fas fa-user"></i></a>
+                <a href="#cart" class="cart-icon"><i class="fas fa-shopping-cart"></i><span class="cart-count">0</span></a>
+            </div>
+        </div>
+    </header>
+
+    <div class="collection-container">
+        <div class="category-selector">
+            <h1 class="collection-title">Our Premium Collection</h1>
+            <p>Choose your preferred puff category</p>
+            <div class="category-buttons">
+                <button class="category-btn active" data-category="14000">14,000 Puffs</button>
+                <button class="category-btn" data-category="9000">9,000 Puffs</button>
+            </div>
+        </div>
+
+        <!-- 14,000 Puffs Section -->
+        <div id="14000-puffs" class="category-section active">
+            <h2 class="collection-title">14,000 Puffs Collection</h2>
+            <div class="products-grid" id="14000-products">
+                <!-- Product cards will be added here -->
+                <!-- Template for one product card (15 total) -->
+                <div class="product-card" data-id="14001" data-name="14K Product 1" data-price="24.99" data-puffs="14000">
+                    <div class="product-image">
+                        <!-- Image will be added here -->
+                        <img src="images/placeholder-product.jpg" alt="14K Product 1">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">14K Product 1</h3>
+                        <div class="product-puffs">14,000 Puffs</div>
+                        <div class="product-price">$24.99</div>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+                <!-- Repeat this structure 14 more times with unique data-id -->
+            </div>
+        </div>
+
+        <!-- 9,000 Puffs Section -->
+        <div id="9000-puffs" class="category-section">
+            <h2 class="collection-title">9,000 Puffs Collection</h2>
+            <div class="products-grid" id="9000-products">
+                <!-- Product cards will be added here -->
+                <!-- Template for one product card (23 total) -->
+                <div class="product-card" data-id="9001" data-name="9K Product 1" data-price="19.99" data-puffs="9000">
+                    <div class="product-image">
+                        <!-- Image will be added here -->
+                        <img src="images/placeholder-product.jpg" alt="9K Product 1">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">9K Product 1</h3>
+                        <div class="product-puffs">9,000 Puffs</div>
+                        <div class="product-price">$19.99</div>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+                <!-- Repeat this structure 22 more times with unique data-id -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Cart Notification -->
+    <div class="cart-notification" id="cartNotification">
+        Item added to cart!
+    </div>
+
+    <script>
+        // Cart functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize cart from localStorage
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            updateCartCount();
+            
+            // Category switching functionality
+            const categoryButtons = document.querySelectorAll('.category-btn');
+            const categorySections = document.querySelectorAll('.category-section');
+            
+            categoryButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Remove active class from all buttons and sections
+                    categoryButtons.forEach(btn => btn.classList.remove('active'));
+                    categorySections.forEach(section => section.classList.remove('active'));
+                    
+                    // Add active class to clicked button
+                    this.classList.add('active');
+                    
+                    // Show corresponding section
+                    const category = this.getAttribute('data-category');
+                    document.getElementById(`${category}-puffs`).classList.add('active');
+                });
+            });
+            
+            // Add to cart functionality
+            document.querySelectorAll('.add-to-cart').forEach(button => {
+                button.addEventListener('click', function() {
+                    const productCard = this.closest('.product-card');
+                    const productId = productCard.getAttribute('data-id');
+                    const productName = productCard.getAttribute('data-name');
+                    const productPrice = parseFloat(productCard.getAttribute('data-price'));
+                    const productPuffs = productCard.getAttribute('data-puffs');
+                    
+                    // Check if product already in cart
+                    const existingItem = cart.find(item => item.id === productId);
+                    
+                    if (existingItem) {
+                        existingItem.quantity += 1;
+                    } else {
+                        cart.push({
+                            id: productId,
+                            name: productName,
+                            price: productPrice,
+                            puffs: productPuffs,
+                            quantity: 1
+                        });
+                    }
+                    
+                    // Update localStorage
+                    localStorage.setItem('cart', JSON.stringify(cart));
+                    
+                    // Update UI
+                    updateCartCount();
+                    showCartNotification();
+                    this.textContent = 'Added to Cart';
+                    this.classList.add('added-to-cart');
+                    
+                    // Reset button after 2 seconds
+                    setTimeout(() => {
+                        this.textContent = 'Add to Cart';
+                        this.classList.remove('added-to-cart');
+                    }, 2000);
+                });
+            });
+            
+            // Update cart count in header
+            function updateCartCount() {
+                const count = cart.reduce((total, item) => total + item.quantity, 0);
+                document.querySelector('.cart-count').textContent = count;
+            }
+            
+            // Show cart notification
+            function showCartNotification() {
+                const notification = document.getElementById('cartNotification');
+                notification.classList.add('show');
+                
+                setTimeout(() => {
+                    notification.classList.remove('show');
+                }, 3000);
+            }
+            
+            // Generate sample products (in a real app, these would come from a database)
+            function generateSampleProducts() {
+                // Generate 14,000 puff products
+                const container14k = document.getElementById('14000-products');
+                for (let i = 2; i <= 15; i++) {
+                    const product = document.createElement('div');
+                    product.className = 'product-card';
+                    product.setAttribute('data-id', `1400${i}`);
+                    product.setAttribute('data-name', `14K Product ${i}`);
+                    product.setAttribute('data-price', (24.99 + i).toFixed(2));
+                    product.setAttribute('data-puffs', '14000');
+                    product.innerHTML = `
+                        <div class="product-image">
+                            <img src="images/placeholder-product.jpg" alt="14K Product ${i}">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-name">14K Product ${i}</h3>
+                            <div class="product-puffs">14,000 Puffs</div>
+                            <div class="product-price">$${(24.99 + i).toFixed(2)}</div>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </div>
+                    `;
+                    container14k.appendChild(product);
+                }
+                
+                // Generate 9,000 puff products
+                const container9k = document.getElementById('9000-products');
+                for (let i = 2; i <= 23; i++) {
+                    const product = document.createElement('div');
+                    product.className = 'product-card';
+                    product.setAttribute('data-id', `900${i}`);
+                    product.setAttribute('data-name', `9K Product ${i}`);
+                    product.setAttribute('data-price', (19.99 + i).toFixed(2));
+                    product.setAttribute('data-puffs', '9000');
+                    product.innerHTML = `
+                        <div class="product-image">
+                            <img src="images/placeholder-product.jpg" alt="9K Product ${i}">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-name">9K Product ${i}</h3>
+                            <div class="product-puffs">9,000 Puffs</div>
+                            <div class="product-price">$${(19.99 + i).toFixed(2)}</div>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </div>
+                    `;
+                    container9k.appendChild(product);
+                }
+                
+                // Re-attach event listeners to new buttons
+                document.querySelectorAll('.add-to-cart').forEach(button => {
+                    button.addEventListener('click', function() {
+                        const productCard = this.closest('.product-card');
+                        const productId = productCard.getAttribute('data-id');
+                        const productName = productCard.getAttribute('data-name');
+                        const productPrice = parseFloat(productCard.getAttribute('data-price'));
+                        const productPuffs = productCard.getAttribute('data-puffs');
+                        
+                        // Check if product already in cart
+                        const existingItem = cart.find(item => item.id === productId);
+                        
+                        if (existingItem) {
+                            existingItem.quantity += 1;
+                        } else {
+                            cart.push({
+                                id: productId,
+                                name: productName,
+                                price: productPrice,
+                                puffs: productPuffs,
+                                quantity: 1
+                            });
+                        }
+                        
+                        // Update localStorage
+                        localStorage.setItem('cart', JSON.stringify(cart));
+                        
+                        // Update UI
+                        updateCartCount();
+                        showCartNotification();
+                        this.textContent = 'Added to Cart';
+                        this.classList.add('added-to-cart');
+                        
+                        // Reset button after 2 seconds
+                        setTimeout(() => {
+                            this.textContent = 'Add to Cart';
+                            this.classList.remove('added-to-cart');
+                        }, 2000);
+                    });
+                });
+            }
+            
+            // Generate sample products (remove this in production)
+            generateSampleProducts();
+        });
+
+        // Add this to your collection.html script
+document.addEventListener('DOMContentLoaded', function() {
+    // Check URL for puff parameter
+    const urlParams = new URLSearchParams(window.location.search);
+    const puffParam = urlParams.get('puffs');
+    
+    if (puffParam === '9000') {
+        // Show 9000 puffs section
+        document.querySelector('[data-category="9000"]').click();
+    } else if (puffParam === '14000') {
+        // Show 14000 puffs section
+        document.querySelector('[data-category="14000"]').click();
+    }
+});
+
+
+
+    </script>
+</body>
+</html>
