@@ -3,15 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nasty Vapes </title>
+    <title>Nasty Vapes</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <style>
+        .logo-container { text-align: center; padding: 20px 0; }
+        .logo-img { max-width: 300px; height: auto; }
+        
+        /* Cloud hover effect */
+        .hero-cloud {
+            font-size: 5rem;
+            color: white;
+            margin-top: 30px;
+            transition: all 0.3s ease;
+            text-shadow: 0 0 15px rgba(255,255,255,0.5);
+        }
+        .hero-cloud:hover {
+            text-shadow: 0 0 30px rgba(255,255,255,0.9);
+            transform: scale(1.1);
+        }
+    </style>
 </head>
-<style>
-    .logo-container { text-align: center; padding: 20px 0; }
-    .logo-img { max-width: 300px; height: auto; }
-</style>
 <body>
     <!-- Age Verification Modal -->
     <div id="ageVerificationModal" class="modal">
@@ -26,48 +39,41 @@
         </div>
     </div>
 
-
-
-<header class="header">
-    <div class="container">
-        <div class="logo">
-            <a href="#" class="logo-link">  <!-- Added logo-link class -->
-                <i class="fas fa-cloud cloud-icon"></i>  <!-- Added cloud-icon class -->
-            </a>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <a href="#" class="logo-link">
+                    <i class="fas fa- cloud-icon"></i> <!-- Header cloud logo -->
+                </a>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <!-- Navigation links -->
+                </ul>
+            </nav>
+            <div class="header-icons">
+                <a href="index.html" class="product-icon"><i class="fas fa-home"></i></a>
+                <a href="collection.html" class="product-icon"><i class="fas fa-box"></i></a>
+                <a href="#account" class="account-icon"><i class="fas fa-user"></i></a>
+                <a href="#cart" class="cart-icon"><i class="fas fa-shopping-cart"></i><span class="cart-count">0</span></a>
+            </div>
+            <button class="mobile-menu-btn"><i class="fas fa-bars"></i></button>
         </div>
-        <nav class="main-nav">
-            <ul>
-                
-       
-                
-               
-              
-            </ul>
-        </nav>
-        <div class="header-icons">
-            <a href="collection.html" class="product-icon"><i class="fas fa-box"></i></a>  <!-- Updated to collection.html -->
-            <a href="#account" class="account-icon"><i class="fas fa-user"></i></a>
-            <a href="#cart" class="cart-icon"><i class="fas fa-shopping-cart"></i><span class="cart-count">0</span></a>
-        </div>
-        <button class="mobile-menu-btn"><i class="fas fa-bars"></i></button>
-    </div>
-</header>
+    </header>
     
-<!-- Hero Section -->
-<section class="hero" style="background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/cloud.png') no-repeat center center/cover;">
-    <div class="hero-content">
-        <h1>Welcome to Smoking Cloud</h1>
-      <div class="btn-group">
-    <a href="collection.html" class="btn-primary">Shop Now</a>  <!-- Changed from #featured to collection.html -->
-    <a href="contact.html" class="btn-primary">Contact Us</a>
-</div>
-        <a class="logo">
-            <i class="fas fa-cloud"></i> 
-        </a>
-        <p>Find your Taste!</p>
-    </div>
-</section>
-
+    <!-- Hero Section -->
+    <section class="hero" style="background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/cloud.png') no-repeat center center/cover;">
+        <div class="hero-content">
+            <h1>Welcome to Smoking Cloud</h1>
+            <div class="btn-group">
+                <a href="collection.html" class="btn-primary">Shop Now</a>
+                <a href="contact.html" class="btn-primary">Contact Us</a>
+            </div>
+            <div class="hero-cloud-container">
+                <i class="fas fa-cloud hero-cloud"></i> <!-- Hero section cloud with hover effect -->
+            </div>
+        </div>
+    </section>
     <!-- Featured Products -->
     <section id="featured" class="featured-products">
         <div class="container">
@@ -75,15 +81,15 @@
             <div class="product-grid">
                 <!-- Product 1 -->
                 <div class="product-card">
-                    <div class="product-badge">TRY NEW </div>
+                    
                     <img src="images/Arctic White.jpeg" alt="Arctic White Vape">
                     <h3>Arctic White</h3>
                     
                
                  
                     <div class="product-price">
-                        <span class="current-price">R200</span>
-                        <span class="original-price">R250</span>
+                        <span class="current-price">R300</span>
+                        <span class="original-price"></span>
                     </div>
                     <button class="btn-primary add-to-cart">Add to Cart</button>
                     
@@ -96,8 +102,8 @@
                     
                    
                     <div class="product-price">
-                        <span class="current-price">R200</span>
-                        <span class="original-price">R250</span>
+                        <span class="current-price">R250</span>
+                        <span class="original-price"></span>
                     </div>
                     <button class="btn-primary add-to-cart">Add to Cart</button>
                    
@@ -106,14 +112,14 @@
                 
                 <!-- Product 3 -->
                 <div class="product-card">
-                    <div class="product-badge">Sale</div>
+                   
                     <img src="images/Blue Razz Ice.jpeg" alt="Arctic White Vape">
                     <h3>Blue Razz Ice</h3>
                     
                  
                     <div class="product-price">
-                        <span class="current-price">R200</span>
-                        <span class="original-price">R250</span>
+                        <span class="current-price">R300</span>
+                        <span class="original-price"></span>
                     </div>
                     <button class="btn-primary add-to-cart">Add to Cart</button>
                    
@@ -122,14 +128,14 @@
                 
                 <!-- Product 4 -->
                 <div class="product-card">
-                    <div class="product-badge">BESTSELLER</div>
+                    
                     <img src="images/Passionfruit.png" alt="Arctic White Vape">
                     <h3>Passionfruit</h3>
                     
                    
                     <div class="product-price">
-                        <span class="current-price">R200</span>
-                        <span class="original-price">R250</span>
+                        <span class="current-price">R250</span>
+                        <span class="original-price"></span>
                     </div>
                     <button class="btn-primary add-to-cart">Add to Cart</button>
                     
@@ -320,27 +326,34 @@
 <!-- Cart Modal -->
 <div id="cartModal" class="modal">
     <div class="modal-content cart-modal">
-        <span class="close-modal">&times;</span>
-        <h2>Your Cart</h2>
+        <div class="modal-header">
+            <h2>Your Cart</h2>
+            <button class="close-modal">&times;</button>
+        </div>
         <div class="cart-items" id="cartItems">
             <!-- Cart items will be added here dynamically -->
+            <div class="empty-cart-message">Your cart is empty</div>
         </div>
         <div class="cart-summary">
-            <div class="cart-total">
-                <span>Subtotal:</span>
-                <span id="cartSubtotal">R0.00</span>
-            </div>
-            <div class="cart-total">
-                <span>Shipping:</span>
-                <span id="cartShipping">R50.00</span>
-            </div>
-            <div class="cart-total grand-total">
-                <span>Total:</span>
-                <span id="cartTotal">R50.00</span>
+            <div class="cart-totals">
+                <div class="cart-total">
+                    <span>Subtotal:</span>
+                    <span id="cartSubtotal">R0.00</span>
+                </div>
+                <div class="cart-total">
+                    <span>Shipping:</span>
+                    <span id="cartShipping">R50.00</span>
+                </div>
+                <div class="cart-total grand-total">
+                    <span>Total:</span>
+                    <span id="cartTotal">R50.00</span>
+                </div>
             </div>
             
-            <!-- Checkout Form (initially hidden) -->
-            <div id="checkoutFormContainer" style="display: none;">
+            <button class="btn-primary checkout-btn" id="checkoutBtn">Proceed to Checkout</button>
+            
+            <!-- Checkout Form (hidden by default) -->
+            <div id="checkoutFormContainer" style="display:none;">
                 <h3>Complete Your Order</h3>
                 <form id="checkoutForm">
                     <div class="form-group">
@@ -373,11 +386,10 @@
                         <p><strong>Reference:</strong> Your Name + Order #</p>
                     </div>
                     
-                    <button type="submit" class="btn-primary" id="placeOrderBtn">Place Order</button>
+                    <button type="submit" class="btn-primary place-order-btn" id="placeOrderBtn">Place Order</button>
                 </form>
             </div>
             
-            <button class="btn-primary" id="checkoutBtn">Proceed to Checkout</button>
             <p class="continue-shopping">or <a href="#" id="continueShopping">Continue Shopping</a></p>
         </div>
     </div>
